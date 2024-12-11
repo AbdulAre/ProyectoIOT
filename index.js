@@ -39,7 +39,7 @@ app.use(bodyParser.json());
 
 // Ruta para probar que el servidor funciona
 app.get('/', (req, res) => {
-  res.send('Servidor funcionando correctamente');
+  res.send('Servidor nuevo funcionando correctamente');
 });
 
 // Ruta para recibir datos del ESP32
