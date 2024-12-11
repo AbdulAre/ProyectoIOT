@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-const port = 3000;
 
 // Middleware para parsear el cuerpo de las peticiones como JSON
 app.use(bodyParser.json());
@@ -21,7 +20,10 @@ app.post('/sonido', (req, res) => {
   res.send({ status: 'OK', soundLevelReceived: soundLevel });
 });
 
+// Puerto dinámico proporcionado por Railway o fallback a 3000
+const port = process.env.PORT || 3000;
+
 // Inicia el servidor
 app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+  console.log(`Servidor corriendo en el puerto ${port}`);
 });
